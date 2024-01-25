@@ -1,8 +1,10 @@
 FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
+RUN mkdir -p /home/ps
 COPY ./audio.ps1 /home/ps
 COPY ./video.ps1 /home/ps
 COPY ./playlist.ps1 /home/ps
+RUN chmod -R 777 /home/ps
 WORKDIR /tmp
 COPY ffmpeg-n6.1-latest-linux64-gpl-6.1.tar.xz .
 RUN apt-get update && apt-get install -y --no-install-recommends && apt-get install -y tzdata \
