@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 RUN mkdir -p /home/ps
 COPY ./audio.ps1 /home/ps
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends && apt-get inst
 	&& apt-get install -y unzip \
 	&& apt-get install -y xz-utils \
 	&& tar -xf 'ffmpeg-n6.1-latest-linux64-gpl-6.1.tar.xz' -C /tmp \
-	&& wget -q https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb \
+	&& wget -q https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb \
 	&& apt-get -y install ./packages-microsoft-prod.deb \
 	&& apt-get -y update \
 	&& apt-get -y install powershell \
