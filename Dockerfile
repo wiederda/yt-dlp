@@ -6,8 +6,9 @@ COPY ./video.ps1 /home/ps
 COPY ./playlist.ps1 /home/ps
 RUN chmod -R 777 /home/ps
 WORKDIR /tmp
-COPY ffmpeg-n7.0-latest-linux64-gpl-7.0.tar.xz .
-RUN apt-get update && apt-get install -y --no-install-recommends && apt-get install -y tzdata \
+RUN wget -q https://hilfe.xfreibeuterx.ipv64.net/ffmpeg-n7.0-latest-linux64-gpl-7.0.tar.xz \
+#COPY ffmpeg-n7.0-latest-linux64-gpl-7.0.tar.xz .
+    && apt-get update && apt-get install -y --no-install-recommends && apt-get install -y tzdata \
 	&& apt-get install -y wget \
 	&& apt-get install -y python3 \
 	&& apt-get install -y tar \
@@ -18,9 +19,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends && apt-get inst
 	&& apt-get -y install ./packages-microsoft-prod.deb \
 	&& apt-get -y update \
 	&& apt-get -y install powershell \
-	&& mv $(find ffmpeg-n6.1-latest-linux64-gpl-6.1/bin -name ffmpeg) /usr/local/bin/ \
-	&& mv $(find ffmpeg-n6.1-latest-linux64-gpl-6.1/bin -name ffprobe) /usr/local/bin/ \
-	&& mv $(find ffmpeg-n6.1-latest-linux64-gpl-6.1/bin -name ffplay) /usr/local/bin/ \
+	&& mv $(find ffmpeg-n7.0-latest-linux64-gpl-7.0/bin -name ffmpeg) /usr/local/bin/ \
+	&& mv $(find ffmpeg-n7.0-latest-linux64-gpl-7.0/bin -name ffprobe) /usr/local/bin/ \
+	&& mv $(find ffmpeg-n7.0-latest-linux64-gpl-7.0/bin -name ffplay) /usr/local/bin/ \
 	&& rm -rf /tmp/* \
 	&& wget -qO /usr/local/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp \
 	&& chmod a+x /opt/microsoft/powershell/7/pwsh \
