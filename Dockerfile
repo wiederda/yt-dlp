@@ -6,9 +6,9 @@ COPY ./video.ps1 /home/ps
 COPY ./playlist.ps1 /home/ps
 RUN chmod -R 777 /home/ps
 WORKDIR /tmp
-RUN wget -q https://hilfe.xfreibeuterx.ipv64.net/ffmpeg-n7.0-latest-linux64-gpl-7.0.tar.xz \
+RUN wget -q https://hilfe.xfreibeuterx.ipv64.net/ffmpeg-n7.0-latest-linux64-gpl-7.0.tar.xz
 #COPY ffmpeg-n7.0-latest-linux64-gpl-7.0.tar.xz .
-    && apt-get update && apt-get install -y --no-install-recommends && apt-get install -y tzdata \
+RUN apt-get update && apt-get install -y --no-install-recommends && apt-get install -y tzdata \
 	&& apt-get install -y wget \
 	&& apt-get install -y python3 \
 	&& apt-get install -y tar \
