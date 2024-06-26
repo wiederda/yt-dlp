@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends && apt-get inst
 	&& apt-get install -y tar \
 	&& apt-get install -y unzip \
 	&& apt-get install -y xz-utils \
-	&& wget -q https://hilfe.xfreibeuterx.ipv64.net/ffmpeg-n7.0-latest-linux64-gpl-7.0.tar.xz
+	&& wget -q https://hilfe.xfreibeuterx.ipv64.net/ffmpeg-n7.0-latest-linux64-gpl-7.0.tar.xz \
 	&& tar -xf 'ffmpeg-n7.0-latest-linux64-gpl-7.0.tar.xz' -C /tmp \
 	&& wget -q https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb \
 	&& apt-get -y install ./packages-microsoft-prod.deb \
