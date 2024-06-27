@@ -7,7 +7,7 @@ COPY ./playlist.ps1 /home/ps
 RUN chmod -R 777 /home/ps
 WORKDIR /tmp
 #https://github.com/yt-dlp/FFmpeg-Builds/releases
-COPY ../ffmpeg-n7.0-latest-linux64-gpl-7.0.tar.xz .
+COPY /home/download/ffmpeg-n7.0-latest-linux64-gpl-7.0.tar.xz .
 RUN apt-get update && apt-get install -y --no-install-recommends && apt-get install -y tzdata \
 	&& apt-get install -y wget \
 	&& apt-get install -y python3 \
