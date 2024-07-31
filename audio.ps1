@@ -1,8 +1,8 @@
 $strDate = Get-Date -format "yyyy-MM-dd_HHmmss"
 
 if (Test-Path /home/output/audio.txt) {
-    New-Item -Path /home/output/$strDate -ItemType Directory
-    Set-Location /home/output/$strDate
+    New-Item -Path /home/output/Audio/$strDate -ItemType Directory
+    Set-Location /home/output/Audio/$strDate
 
     $audioListe = Get-Content /home/output/audio.txt | Where-Object { $_ -match '\S' }
     $tempDatei = "/home/output/audio_temp.txt"
